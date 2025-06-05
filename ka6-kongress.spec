@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.04.1
+%define		kdeappsver	25.04.2
 %define		qtver		6.8.0
 %define		kframever	6.13.0
 %define		kaname		kongress
 Summary:	Kongress
 Name:		ka6-%{kaname}
-Version:	25.04.1
+Version:	25.04.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	8c9f321a5a62449b7a8233d948c3e590
+# Source0-md5:	cc45631065ce25cb0617360cac7d2ade
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.20
