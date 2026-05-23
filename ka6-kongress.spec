@@ -42,6 +42,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Companion application for conference attendees.
 
+%description -l pl.UTF-8
+Kongress jest programem do spotkań stworzony w ramach KDE.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
