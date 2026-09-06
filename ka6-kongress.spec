@@ -2,8 +2,8 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %define		kdeappsver	26.08.0
-%define		qtver		6.8.0
-%define		kframever	6.13.0
+%define		qtver		6.9.0
+%define		kframever	6.15.0
 %define		kaname		kongress
 Summary:	Kongress
 Name:		ka6-%{kaname}
@@ -15,9 +15,16 @@ Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kan
 # Source0-md5:	12b506b2da7800281ced09587b6d60bf
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6Network-devel >= %{qtver}
+BuildRequires:	Qt6Qml-devel >= %{qtver}
+BuildRequires:	Qt6Quick-devel >= %{qtver}
+BuildRequires:	Qt6Svg-devel >= %{qtver}
+%{?with_tests:BuildRequires:	Qt6Test-devel >= %{qtver}}
+BuildRequires:	Qt6Widgets-devel >= %{qtver}
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-tools
-BuildRequires:	ka6-kosmindoormap-devel >= %{kdeappsver}
+BuildRequires:	ka6-kosmindoormap-devel >= 25.08
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf6-kcalendarcore-devel >= %{kframever}
 BuildRequires:	kf6-kconfig-devel >= %{kframever}
@@ -28,8 +35,8 @@ BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-kirigami-addons-devel >= 1.0
 BuildRequires:	kf6-kirigami-devel >= %{kframever}
 BuildRequires:	kf6-knotifications-devel >= %{kframever}
+BuildRequires:	libstdc++-devel >= 6:8
 BuildRequires:	ninja
-BuildRequires:	python3
 BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
